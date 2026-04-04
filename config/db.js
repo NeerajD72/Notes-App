@@ -2,8 +2,12 @@ import mongoose from "mongoose";
 import logger from "./logger.js";
 
 
-
+let isConnected = false
 const connection=async()=>{
+   if (isConnected) {  // ✅ 2. yeh check add karo
+    logger.info('Using existing database connection')
+    return
+  }
   let attempts=0
   const maxRetries=5
   while(attempts<maxRetries){
