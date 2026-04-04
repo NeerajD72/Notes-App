@@ -33,8 +33,8 @@ export const googleLogin=asynchandler(async(req,resp)=>{
 
 export const googleLoginHandler=asynchandler(async(req,resp)=>{
   const code=req.query.code
-  //  console.log('callback hit')        // ← add this
-  //  console.log('code:', code)   
+  console.log('Callback URL:', req.url)  // ← yeh add karo
+  console.log('Query params:', req.query)  
   if(!code){
     return resp.status(400).json({msg:'code is missing'})
   }

@@ -19,7 +19,7 @@ export const About=async(req,res)=>{
     title:'About- Nodejs notes',
     description:'Free hai looto'
   }
-  res.render('about',locals)
+  res.render('about',{locals})
 }
 
 export const Features=async(req,resp)=>{
@@ -27,7 +27,7 @@ export const Features=async(req,resp)=>{
     title:'Features- Nodejs notes',
     description:'Everything Notes app can do for you'
   }
-  resp.render('features',locals)
+  resp.render('features',{locals})
 }
 
 
@@ -36,5 +36,5 @@ export const FAQs=async(req,resp)=>{
     title:'FAQs -Node js notes App',
     description:'Frequently asked questions'
   }
-  resp.render('faq',locals)
+  resp.render('faq',{locals})
 }

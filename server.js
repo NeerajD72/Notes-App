@@ -7,7 +7,7 @@ import logger from './config/logger.js'
 
 const startServer=async()=>{
     await connection()
-    app.listen(process.env.PORT,()=>{
+    app.listen(process.env.PORT || 3000,()=>{
       logger.info(`server listening at ${process.env.PORT}`)
     })
 }
