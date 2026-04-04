@@ -1,35 +1,48 @@
-<div class="container-fluid container-fluid-custom pb-5 mb-5">
-  <div class="row mb-4">
-    <div class="col">
-      <h1>Hey, <%= userName %></h1>
-    </div>
-    <div class="col text-end">
-      <a href="/dashboard/add" class="btn btn-primary">+ New Note</a>
-    </div>
-  </div>
-</div>
+<div class="dash-wrapper">
 
-<div class="row">
+  <div class="dash-header">
+    <div class="dash-greeting">
+      <span class="dash-greeting-small">Welcome back</span>
+      <h1 class="dash-greeting-name">Hey, <%= userName %> 👋</h1>
+    </div>
+    <a href="/dashboard/add" class="btn btn-primary">+ New Note</a>
+  </div>
+
+  <div class="dash-grid">
     <% if (notes.length > 0) { for(var i=0; i < notes.length; i++) { %>
-      <div class="col-sm-3 mb-4">
-        <div class="card border-primary" style="min-height: 210px">
-          <a href="/dashboard/item-view/<%= notes[i]._id %>" class="card-body text-decoration-none">
-            <h5 class="card-title"><%= notes[i].title %></h5>
-            <p class="card-text"><%= notes[i].body %></p>
-          </a>
-        </div>
-      </div>
-    <%  }} else { %>
-      <div class="row">
-        <div class="col-3">
-          <img src="/image/human-3.svg" alt="Human pointing hand toward a create button">
-        </div>
-        <div class="col mt-md-4">
-          <h2>Okay...</h2>
-          <h4>Let's start with your first note!<br/><br/>
-            <a href="/dashboard/add">Create one!</a>
-          </h4>
-        </div>
+      <a href="/dashboard/item-view/<%= notes[i]._id %>" class="note-card text-decoration-none">
+        <h5 class="note-card-title"><%= notes[i].title %></h5>
+        <p class="note-card-body"><%= notes[i].body %></p>
+      </a>
+    <% }} else { %>
+      <div class="dash-empty">
+        <img src="/image/human-3.svg" alt="Create a note">
+        <h2>Okay...</h2>
+        <h4>Let's start with your first note!<br/><br/>
+          <a href="/dashboard/add">Create one!</a>
+        </h4>
       </div>
     <% } %>
   </div>
+
+ <% if (pages > 1) { %>
+<div class="dash-pagination">
+  <% if (current > 1) { %>
+    <a href="/dashboard?page=<%= current - 1 %>" class="dash-page-btn">← Prev</a>
+  <% } %>
+
+  <% for(var i = 1; i <= pages; i++) { %>
+    <% if (i === 1 || i === pages || (i >= current - 1 && i <= current + 1)) { %>
+      <a href="/dashboard?page=<%= i %>" class="dash-page-btn <%= current == i ? 'active' : '' %>"><%= i %></a>
+    <% } else if (i === current - 2 || i === current + 2) { %>
+      <span class="dash-page-dots">...</span>
+    <% } %>
+  <% } %>
+
+  <% if (current < pages) { %>
+    <a href="/dashboard?page=<%= current + 1 %>" class="dash-page-btn">Next →</a>
+  <% } %>
+</div>
+<% } %>
+
+</div>

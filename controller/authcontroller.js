@@ -124,7 +124,7 @@ export const googleLoginHandler=asynchandler(async(req,resp)=>{
 })
 
 export const logout=asynchandler(async(req,resp)=>{
-  const token = req.cookies.refreshtoken || req.headers.authorization?.split(" ")[1];
+  const token = req.cookies.accessToken || req.headers.authorization?.split(" ")[1];
   if(!token){
     return resp.status(401).json({msg:'required token is missing'})
   }
@@ -133,5 +133,5 @@ export const logout=asynchandler(async(req,resp)=>{
   })
   resp.clearCookie("refreshtoken",{path:'/'})
   logger.info('user logout success')
-  return resp.status(200).json({msg:'user logout success'})
+  return resp.redirect('/')
 })

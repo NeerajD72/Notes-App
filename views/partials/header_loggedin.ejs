@@ -4,13 +4,10 @@
       Notes
     </a>
 
-    <form class="col-md-5 mb-2 mb-md-0" role="search" method="POST" action="/dashboard/search">
-      <input type="search" name="searchTerm" class="form-control border-primary" placeholder="Search notes..." aria-label="Search">
-    </form>
-
-    <div class="col-md-3 text-end">
+    <div class="text-end">
+      <a href="/dashboard" class="btn btn-outline-primary me-2">Dashboard</a>
       <form action="/logout" method="POST" style="display:inline;">
-        <button type="submit" class="btn btn-outline-primary">Logout</button>
+        <button type="submit" class="btn btn-primary">Logout</button>
       </form>
     </div>
   </header>

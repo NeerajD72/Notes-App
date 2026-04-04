@@ -1,0 +1,76 @@
+<div class="about-wrapper">
+
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-tag">Got Questions?</div>
+      <h1 class="about-hero-title">Frequently Asked<br>Questions.</h1>
+      <p class="about-hero-sub">
+        Everything you need to know about Notes app. Can't find an answer? Reach out on GitHub.
+      </p>
+    </div>
+    <div class="about-hero-badge">FAQ.</div>
+  </section>
+
+  <section class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-question">Is Notes app completely free?</div>
+      <div class="faq-answer">Yes! 100% free. No subscriptions, no hidden charges, no premium plan. Just sign in and start writing.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I sign in?</div>
+      <div class="faq-answer">Click the "Sign In" button and log in with your Google account. That's it — no separate registration needed.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Are my notes private?</div>
+      <div class="faq-answer">Absolutely. Each note is linked to your user account. Nobody else can see, edit, or delete your notes.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How many notes can I create?</div>
+      <div class="faq-answer">As many as you want! There is no limit on the number of notes you can create or store.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I search my notes?</div>
+      <div class="faq-answer">Yes! Use the search bar in the dashboard to search by title or content across all your notes instantly.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I edit a note after saving it?</div>
+      <div class="faq-answer">Yes. Click any note from your dashboard to open it, make your changes, and hit "Save Changes".</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What happens when I delete a note?</div>
+      <div class="faq-answer">A confirmation popup appears first. Once confirmed, the note is permanently deleted from the database.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Does it work on mobile?</div>
+      <div class="faq-answer">Yes! The app is fully responsive and works on all screen sizes — mobile, tablet, and desktop.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I logout?</div>
+      <div class="faq-answer">Click the "Logout" button in the top right corner of any page when you are logged in.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is my data safe?</div>
+      <div class="faq-answer">Your data is stored in MongoDB Atlas cloud database. Authentication uses JWT tokens stored in secure httpOnly cookies.</div>
+    </div>
+
+  </section>
+
+  <% if (!locals.user) { %>
+<section class="about-cta">
+  <p>Still have questions?</p>
+  <a href="https://github.com/NeerajD72" target="_blank" class="btn btn-primary btn-lg me-2">Ask on GitHub →</a>
+  <a href="https://www.linkedin.com/in/neeraj-kumar-b82a78324/" target="_blank" class="btn btn-outline-primary btn-lg">LinkedIn →</a>
+</section>
+<% } %>
+
+</div>

@@ -1,0 +1,64 @@
+<div class="about-wrapper">
+
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-tag">What We Offer</div>
+      <h1 class="about-hero-title">Everything you need.<br>Nothing you don't.</h1>
+      <p class="about-hero-sub">
+        Notes is packed with powerful features — all completely free, no account needed beyond Google login.
+      </p>
+    </div>
+    <div class="about-hero-badge">Features.</div>
+  </section>
+
+  <section class="about-features">
+    <div class="about-feature-card">
+      <div class="about-feature-icon">🔐</div>
+      <h3>Google Login</h3>
+      <p>One click sign in with your Google account. No passwords to remember, no email verification needed.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">📝</div>
+      <h3>Create Notes</h3>
+      <p>Write and save notes instantly. Give them a title and body — your thoughts are stored securely in the cloud.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">✏️</div>
+      <h3>Edit Anytime</h3>
+      <p>Changed your mind? Open any note and update it instantly. All changes are saved to the database in real time.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">🗑️</div>
+      <h3>Delete Notes</h3>
+      <p>Clean up old notes with one click. A confirmation modal makes sure you never delete something by accident.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">🔍</div>
+      <h3>Search Notes</h3>
+      <p>Find any note in seconds. Search by title or body content — results show up instantly as you type.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">📄</div>
+      <h3>Pagination</h3>
+      <p>Got hundreds of notes? No problem. Notes are paginated so your dashboard always loads fast and clean.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">📱</div>
+      <h3>Responsive</h3>
+      <p>Works perfectly on mobile, tablet, and desktop. Take notes anywhere, on any device, any screen size.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">⚡</div>
+      <h3>Fast & Lightweight</h3>
+      <p>Server-rendered with EJS — no heavy JavaScript frameworks. Pages load instantly every single time.</p>
+    </div>
+  </section>
+
+  <% if (!locals.user) { %>
+  <section class="about-cta">
+    <p>Ready to try it out?</p>
+    <a href="/auth/google" class="btn btn-primary btn-lg">Start for Free →</a>
+  </section>
+  <% } %>
+
+</div>

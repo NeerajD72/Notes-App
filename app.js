@@ -7,6 +7,8 @@ import routes from './routes/index.js'
 import DashBoardroutes from './routes/dashboard.js'
 import authRoutes from './routes/authroutes.js'
 import methodOverride from 'method-override'
+import {verifyAccessToken} from'./lib/tokens.js'
+import User from './model/user.js'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const app=express()
@@ -26,6 +28,25 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('layout','./layouts/main')
 app.set('view engine','ejs')
 
+app.use(async (req, res, next) => {
+  try {
+    const token = req.cookies?.accessToken
+    if (token) {
+      const payload = await verifyAccessToken(token)
+      const user = await User.findById(payload._id)
+      if (user) {
+        req.user = {
+          _id: user._id,
+          name: user.name,
+          email: user.email,
+          isEmailVerified: user.isEmailVerified
+        }
+      }
+    }
+  } catch (_) {}
+  res.locals.user = req.user || null
+  next()
+})
 //routes
 app.use('/',routes)
 app.use('/',DashBoardroutes)

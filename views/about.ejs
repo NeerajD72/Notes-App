@@ -1,2 +1,86 @@
-<div class="container-fluid container-fluid-custom"></div>
-<h1>About</h1>
+<div class="about-wrapper">
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-tag">About the App</div>
+      <h1 class="about-hero-title">Built for thinkers.<br>Designed for clarity.</h1>
+      <p class="about-hero-sub">
+        A fast, distraction-free notes app built on Node.js, EJS & MongoDB — 
+        so your ideas have a home the moment they arrive.
+      </p>
+    </div>
+    <div class="about-hero-badge">Notes.</div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="about-features">
+    <div class="about-feature-card">
+      <div class="about-feature-icon">✦</div>
+      <h3>Secure by Default</h3>
+      <p>Google OAuth login. JWT-based sessions. Your notes belong to you — nobody else can see them.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">◈</div>
+      <h3>Instant Search</h3>
+      <p>Full-text search across all your notes. Find anything in milliseconds, no matter how many you have.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">⬡</div>
+      <h3>Always Fast</h3>
+      <p>Server-rendered with EJS and MongoDB. No bloated frontend framework — just speed.</p>
+    </div>
+    <div class="about-feature-card">
+      <div class="about-feature-icon">◎</div>
+      <h3>Totally Free</h3>
+      <p>No subscriptions, no paywalls, no ads. Just open it, sign in, and start writing.</p>
+    </div>
+  </section>
+
+  <!-- Developer Section -->
+  <section class="about-dev">
+    <div class="about-dev-left">
+      <p class="about-dev-label">The Developer</p>
+      <h2 class="about-dev-name">Neeraj Kumar</h2>
+      <p class="about-dev-role">Backend Developer</p>
+      <p class="about-dev-bio">
+        Passionate about building real-world systems and understanding how things work behind the scenes. 
+        I work with Node.js, Express, and MongoDB — and I build projects to sharpen my craft.
+      </p>
+      <p class="about-dev-bio">
+        This app is a reflection of that curiosity: auth, databases, clean APIs, and a UI that doesn't get in your way.
+      </p>
+      <div class="about-dev-links">
+        <a href="https://www.linkedin.com/in/neeraj-kumar-b82a78324/" target="_blank" class="about-link about-link-blue">
+          <span>in</span> LinkedIn
+        </a>
+        <a href="https://github.com/NeerajD72" target="_blank" class="about-link about-link-dark">
+          <span>&#123;&#125;</span> GitHub
+        </a>
+      </div>
+    </div>
+    <div class="about-dev-right">
+      <div class="about-stack-card">
+        <p class="about-stack-label">Tech Stack</p>
+        <ul class="about-stack-list">
+          <li><span class="about-stack-dot"></span>Node.js + Express</li>
+          <li><span class="about-stack-dot"></span>MongoDB + Mongoose</li>
+          <li><span class="about-stack-dot"></span>EJS Templating</li>
+          <li><span class="about-stack-dot"></span>Google OAuth 2.0</li>
+          <li><span class="about-stack-dot"></span>JWT Authentication</li>
+          <li><span class="about-stack-dot"></span>Bootstrap 5</li>
+          <li><span class="about-stack-dot"></span>Winston Logger</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA — only show when NOT logged in -->
+  <% if (!locals.user) { %>
+  <section class="about-cta">
+    <p>Ready to write something?</p>
+    <a href="/auth/google" class="btn btn-primary btn-lg">Start for Free →</a>
+  </section>
+  <% } %>
+
+</div>

@@ -8,7 +8,7 @@ import asynchandler from'../lib/asyncHandler.js'
 export const dashboard=asynchandler(async(req,res)=>{
 
   let perPage=12
-  let page=req.query.page || 1
+  let page=parseInt(req.query.page) || 1
   
   const locals={
     title:'Dashboard',

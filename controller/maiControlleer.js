@@ -1,4 +1,5 @@
 import express from 'express'
+import { title } from 'process'
 
 
 
@@ -19,4 +20,21 @@ export const About=async(req,res)=>{
     description:'Free hai looto'
   }
   res.render('about',locals)
+}
+
+export const Features=async(req,resp)=>{
+  const locals={
+    title:'Features- Nodejs notes',
+    description:'Everything Notes app can do for you'
+  }
+  resp.render('features',locals)
+}
+
+
+export const FAQs=async(req,resp)=>{
+  const locals={
+    title:'FAQs -Node js notes App',
+    description:'Frequently asked questions'
+  }
+  resp.render('faq',locals)
 }
